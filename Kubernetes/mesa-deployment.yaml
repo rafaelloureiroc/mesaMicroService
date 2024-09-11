@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mesa-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mesa-service
+  template:
+    metadata:
+      labels:
+        app: mesa-service
+    spec:
+      containers:
+        - name: mesa-service
+          image: rafaelloureioc/mesa-service:latest
+          ports:
+            - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mesa-service
+spec:
+  selector:
+    app: mesa-service
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+  type: ClusterIP
