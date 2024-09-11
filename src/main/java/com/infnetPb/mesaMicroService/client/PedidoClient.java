@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.UUID;
 
-@FeignClient(name = "pedido-service", url = "http://localhost:8085")
+@FeignClient(name = "pedido-service", url = "http://pedido-service:8085")
 public interface PedidoClient {
 
     @GetMapping("/pedidos/{id}")

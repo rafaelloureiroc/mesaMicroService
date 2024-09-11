@@ -131,7 +131,7 @@ public class MesaService {
         mesa.setQtdAssentosMax(mesaDTO.getQtdAssentosMax());
         mesa.setInfoAdicional(mesaDTO.getInfoAdicional());
         mesa.setReservaId(mesaDTO.getReservaId());
-        mesa.setStatus(mesaDTO.getReservaId() != null ? "Reservada" : "Disponível");
+        //mesa.setStatus(mesaDTO.getReservaId() != null ? "Reservada" : "Disponível");
 
         if (mesaDTO.getPedidos() != null) {
             if (!mesaDTO.getPedidos().isEmpty()) {
